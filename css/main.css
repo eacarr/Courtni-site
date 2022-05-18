@@ -196,6 +196,7 @@ img {
 }
 .sign_up input {
   padding: 22px 30px;
+  border: solid;
   border-color: #e9e4df;
   margin-bottom: 25px;
 }
@@ -206,7 +207,7 @@ img {
   color: #ffff;
   padding: 22px 32px;
   background-color: #aba6a1;
-  border: none;
+  border: outset;
 }
 /* ==========================================================================
    Helper classes
@@ -296,8 +297,34 @@ img {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
+@media only screen and (min-width: 768px) {
   /* Style adjustments for viewports that meet the condition */
+  .header {
+    margin-top: 50px;
+  }
+  .menu_links {
+    margin: 130px 0 50px 0;
+  }
+  .border-top {
+    border-top: #aba6a1 solid 1px;
+  }
+  .option-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-column-gap: 2vw;
+    grid-row-gap: 4vw;
+    padding: 0;
+    margin-top: 30px;
+  }
+  img {
+    min-height: 150px;
+  }
+  .sign_up {
+    flex-direction: row;
+  }
+  .sign_up input {
+    margin: 0 15px 0 0;
+  }
 }
 
 @media print,
