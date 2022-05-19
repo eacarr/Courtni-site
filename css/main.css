@@ -100,7 +100,11 @@ body {
 header,
 section,
 footer {
+  width: 100%;
   padding: 0 20px;
+}
+.container {
+  max-width: 1280px;
 }
 #bars {
   padding: 0;
@@ -109,6 +113,9 @@ footer {
   border: none;
 }
 .nav_links {
+  display: none;
+}
+.end .social {
   display: none;
 }
 ul,
@@ -178,7 +185,7 @@ img {
   flex-direction: column;
   align-items: center;
 }
-.connect .fa-instagram {
+.fa-instagram {
   padding-right: 10px;
 }
 .connect .social {
@@ -297,6 +304,7 @@ img {
    Modify as content requires.
    ========================================================================== */
 
+/*tablet version*/
 @media only screen and (min-width: 768px) {
   /* Style adjustments for viewports that meet the condition */
   .header {
@@ -327,6 +335,60 @@ img {
   }
 }
 
+/* About.html */
+.about-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 75px;
+}
+.head-shot,
+.about-info {
+  width: 50%;
+}
+.head-shot img {
+  width: auto;
+  min-height: 250px;
+  max-height: 450px;
+  padding-right: 17px;
+}
+.about-info p {
+  margin: 0%;
+  padding-left: 17px;
+}
+/* full screen version */
+@media only screen and (min-width: 1200px) {
+  header,
+  section,
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .header {
+    width: 1280px;
+  }
+  #bars {
+    display: none;
+  }
+  .nav_links {
+    display: inline-flex;
+    width: 200px;
+    justify-content: space-between;
+  }
+  .title {
+    padding-right: 100px;
+  }
+  .end .social {
+    display: inline;
+    padding-right: 50px;
+  }
+  /* About page */
+  .about-area {
+    width: 1000px;
+  }
+}
 @media print,
   (-webkit-min-device-pixel-ratio: 1.25),
   (min-resolution: 1.25dppx),
