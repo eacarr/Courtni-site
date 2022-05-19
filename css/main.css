@@ -216,6 +216,18 @@ img {
   background-color: #aba6a1;
   border: outset;
 }
+/* About page */
+.about-area {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.head-shot img {
+  max-width: fit-content;
+  min-height: fit-content;
+  max-height: 450px;
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -324,7 +336,7 @@ img {
     padding: 0;
     margin-top: 30px;
   }
-  img {
+  .item img {
     min-height: 150px;
   }
   .sign_up {
@@ -333,29 +345,29 @@ img {
   .sign_up input {
     margin: 0 15px 0 0;
   }
+  /* About page */
+  .about-area {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 75px;
+  }
+  .head-shot,
+  .about-info {
+    width: 50%;
+  }
+  .head-shot img {
+    width: 100%;
+    min-height: 250px;
+    max-height: 450px;
+    padding-right: 17px;
+  }
+  .about-info p {
+    margin: 0%;
+    padding-left: 17px;
+  }
 }
 
-/* About.html */
-.about-area {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-top: 75px;
-}
-.head-shot,
-.about-info {
-  width: 50%;
-}
-.head-shot img {
-  width: auto;
-  min-height: 250px;
-  max-height: 450px;
-  padding-right: 17px;
-}
-.about-info p {
-  margin: 0%;
-  padding-left: 17px;
-}
 /* full screen version */
 @media only screen and (min-width: 1200px) {
   header,
