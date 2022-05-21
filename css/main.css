@@ -93,6 +93,7 @@ textarea {
 }
 body {
   font-family: "Poppins", sans-serif;
+  font-weight: 300;
   max-width: inherit;
   padding: 0;
   margin: 0;
@@ -227,6 +228,59 @@ img {
   max-width: fit-content;
   min-height: fit-content;
   max-height: 450px;
+}
+/* Contact page */
+.contact-info h2 {
+  margin-top: 75px;
+  font-family: "Noto Sans", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+}
+.contact-info p {
+  line-height: 2em;
+}
+.name {
+  padding-top: 25px;
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 0.5fr 1fr 1fr;
+  grid-template-areas:
+    "a a a a"
+    "b b d d"
+    "c c e e";
+}
+.contact-inputs input {
+  border: #aba6a1 solid 1px;
+}
+.name p {
+  margin: 0;
+}
+#name {
+  grid-area: a;
+}
+#input-1 {
+  padding: 10px;
+  grid-area: b;
+}
+.first-name {
+  grid-area: c;
+}
+#input-2 {
+  grid-area: d;
+}
+.last-name {
+  grid-area: e;
+}
+.email input,
+.subject input {
+  padding: 12px;
+  width: 100%;
+}
+.message input {
+  width: 100%;
+  height: 100px;
 }
 /* ==========================================================================
    Helper classes
@@ -366,6 +420,27 @@ img {
     margin: 0%;
     padding-left: 17px;
   }
+  /* Contact page */
+  .contact-area {
+    display: flex;
+    flex-direction: row;
+  }
+  .contact-info,
+  .contact-inputs {
+    width: 50%;
+  }
+  .contact-info h2 {
+    font-size: 35px;
+  }
+  .contact-info {
+    padding-right: 17px;
+  }
+  .contact-inputs {
+    padding-left: 17px;
+  }
+  .name {
+    padding-top: 75px;
+  }
 }
 
 /* full screen version */
@@ -388,6 +463,9 @@ img {
     display: inline-flex;
     width: 200px;
     justify-content: space-between;
+  }
+  .current-page {
+    border-bottom: #aba6a1 solid;
   }
   .title {
     padding-right: 100px;
