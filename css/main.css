@@ -98,6 +98,9 @@ body {
   padding: 0;
   margin: 0;
 }
+.noscroll {
+  overflow: hidden;
+}
 header,
 section,
 footer {
@@ -107,12 +110,91 @@ footer {
 .container {
   max-width: 1280px;
 }
-#bars {
-  padding: 0;
-  font-size: 25px;
-  background: none;
-  border: none;
+.hamburger-wrap .toggler {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
 }
+
+.hamburger-wrap {
+  position: relative;
+}
+.hamburger-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 30px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Hamburger Line */
+.hamburger-wrap .hamburger > div {
+  position: relative;
+  flex: none;
+  width: 100%;
+  height: 2px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+/* Hamburger Lines - Top & Bottom */
+.hamburger-wrap .hamburger > div::before,
+.hamburger-wrap .hamburger > div::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  width: 100%;
+  height: 2px;
+  background: inherit;
+}
+/* Moves Line Down */
+.hamburger-wrap .hamburger > div::after {
+  top: 10px;
+}
+
+/* Toggler Animation */
+.hamburger-wrap .toggler:checked + .hamburger > div {
+  transform: rotate(135deg);
+}
+
+/* Turns Lines Into X */
+.hamburger-wrap .toggler:checked + .hamburger > div:before,
+.hamburger-wrap .toggler:checked + .hamburger > div:after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+/* Rotate On Hover When Checked */
+.hamburger-wrap .toggler:checked:hover + .hamburger > div {
+  transform: rotate(225deg);
+}
+
+/* Show Menu */
+.hamburger-wrap .toggler:checked ~ .menu {
+  visibility: visible;
+}
+
+.hamburger-wrap .toggler:checked ~ .menu > div {
+  transform: scale(1);
+  transition-duration: var(--menu-speed);
+}
+
+.hamburger-wrap .toggler:checked ~ .menu > div > div {
+  opacity: 1;
+  transition: opacity 0.4s ease 0.4s;
+}
+
 .nav_links {
   display: none;
 }
@@ -142,6 +224,7 @@ i {
 }
 .title {
   margin: 0;
+  padding: 0 16px 0 0;
 }
 .end {
   display: flex;
@@ -154,6 +237,43 @@ i {
   align-items: center;
   justify-content: center;
   margin: 50px 0 30px 0;
+}
+.modal {
+  position: fixed;
+  top: 35%;
+  left: 30%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: all 0.5s;
+}
+.hamburger_links {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.hamburger_links a {
+  font-size: 35px;
+  padding: 11px;
+}
+.hamburger_social .fab {
+  font-size: 30px;
+}
+.overlay {
+  position: fixed;
+  top: 10%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 100;
+  transition: all 0.5s;
+  scroll-behavior: unset;
 }
 #cups,
 #shirts,
@@ -471,7 +591,8 @@ img {
   .header {
     width: 1280px;
   }
-  #bars {
+  .nav .hamburger,
+  .toggler {
     display: none;
   }
   .nav_links {
