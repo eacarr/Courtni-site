@@ -217,7 +217,7 @@ a {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin: 25px 0;
+  margin: 20px 0;
 }
 i {
   font-size: 20px;
@@ -242,7 +242,7 @@ i {
   position: fixed;
   top: 35%;
   left: 30%;
-  height: 500px;
+  height: 475px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -517,6 +517,11 @@ img {
   .border-top {
     border-top: #aba6a1 solid 1px;
   }
+  .modal {
+    top: 25%;
+    left: 40%;
+    height: 600px;
+  }
   .option-list {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -592,7 +597,9 @@ img {
     width: 1280px;
   }
   .nav .hamburger,
-  .toggler {
+  .toggler,
+  .modal,
+  .overlay {
     display: none;
   }
   .nav_links {
