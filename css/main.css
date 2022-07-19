@@ -525,7 +525,8 @@ img {
     margin-top: 30px;
   }
   .item img {
-    min-height: 150px;
+    height: 150px;
+    object-fit: cover;
   }
   .sign_up {
     flex-direction: row;
@@ -610,6 +611,10 @@ img {
   .end .social {
     display: inline;
     padding-right: 50px;
+  }
+  .item:hover,
+  .item:active {
+    transform: scale(1.2);
   }
   /* About page */
   .about-area {
