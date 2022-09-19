@@ -1,7 +1,10 @@
+const optionList = document.querySelector(".option-list");
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const toggler = document.querySelector(".toggler");
 const body = document.querySelector("body");
+const menuLinks = document.querySelector(".menu_links");
+
 ///////////////////////////////////////
 // Modal window
 
@@ -33,9 +36,112 @@ const reveal = function (entries, observer) {
   entry.target.classList.add("fade-in-element");
   observer.unobserve(entry.target);
 };
+
 const observer = new IntersectionObserver(reveal, {
   root: null,
   threshold: 0.1,
 });
 observer.observe(signUp);
+
 signUp.classList.add("item--hidden");
+
+////////////////////////////////////////////////////////////////////////////////
+//  Render page
+const searchItems = async () => {
+  const getItems = await fetch("/items.json");
+  const itemData = await getItems.json();
+  renderAllOptions(itemData), selectSpecOpt(itemData);
+};
+searchItems();
+
+const renderMenu = () => {
+  const html = `
+  <div class="specific-option "><p class="hidden">All</p></div>
+  <div class="border hidden"></div>
+  <div class="specific-option tumbler"><p>Tumblers</p></div>
+  <div class="border"></div>
+  <div class="specific-option cup"><p>Cups</p></div>
+  <div class="border"></div>
+  <div class="specific-option shirt"><p>Shirts</p></div>
+  <div class="border"></div>
+  <div class="specific-option other-item"><p>Other Items</p></div>
+`;
+  menuLinks.insertAdjacentHTML("beforeend", html);
+};
+renderMenu();
+
+const renderAllOptions = (itemData) => {
+  itemData.forEach((item) => {
+    renderOptions(item);
+  });
+};
+
+const renderOptions = (item) => {
+  const html = `
+  <div data-id="${item.id}"class="item">
+    <img src="${item.image}" alt="${item.title}" />
+    <div class="description">
+      <h3>${item.title}</h3>
+      <p>$${item.price}.00</p>
+    </div>
+  </div>
+  `;
+  optionList.insertAdjacentHTML("beforeend", html);
+};
+
+const hiddenMenu = (hiddenOptions) => {
+  hiddenOptions.forEach((option) => {
+    if (option.classList.contains("hidden")) {
+      option.classList.remove("hidden");
+    } else {
+      option.classList.add("hidden");
+    }
+  });
+};
+
+const hiddenOptions = document.querySelectorAll(".specific-option p, .border");
+const specificOptions = document.querySelectorAll(".specific-option");
+
+const selectSpecOpt = (itemData) => {
+  specificOptions.forEach((option) => {
+    option.addEventListener("click", () => {
+      // console.log("this works");
+      checkDis(option, itemData);
+    });
+  });
+};
+selectSpecOpt();
+
+const checkDis = (option, itemData) => {
+  if (option.classList.contains("tumbler")) {
+    let itemDis = "tumbler";
+    loadOpPage(itemData, itemDis, hiddenOptions);
+  } else if (option.classList.contains("cup")) {
+    let itemDis = "cup";
+    loadOpPage(itemData, itemDis, hiddenOptions);
+  } else if (option.classList.contains("shirt")) {
+    let itemDis = "shirt";
+    loadOpPage(itemData, itemDis, hiddenOptions);
+  } else if (option.classList.contains("other-item")) {
+    let itemDis = "other-item";
+    loadOpPage(itemData, itemDis, hiddenOptions);
+  } else {
+    optionList.innerHTML = "";
+    renderAllOptions(itemData);
+    hiddenMenu(hiddenOptions);
+  }
+};
+
+const loadOpPage = (itemData, itemDis, hiddenOptions) => {
+  optionList.innerHTML = "";
+  loopData(itemData, itemDis);
+  hiddenMenu(hiddenOptions);
+};
+
+const loopData = (itemData, itemDis) => {
+  itemData.forEach((item) => {
+    if (item.description === itemDis) {
+      renderOptions(item);
+    }
+  });
+};

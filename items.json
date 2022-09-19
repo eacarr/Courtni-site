@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "image": "./img/tumbler.png",
+    "title": "Queen Tumbler",
+    "description": "tumbler",
+    "price": 30
+  },
+  {
+    "id": 2,
+    "image": "./img/pink-pearl-cup.jpg",
+    "title": "Pink Pearl cup",
+    "description": "cup",
+    "price": 30
+  },
+  {
+    "id": 3,
+    "image": "./img/sparkle-shirt.jpg",
+    "title": "sparkle shirt",
+    "description": "shirt",
+    "price": 30
+  },
+  {
+    "id": 4,
+    "image": "./img/brown-skin-canvas.jpg",
+    "title": "brown skin canvas",
+    "description": "other-item",
+    "price": 30
+  },
+  {
+    "id": 5,
+    "image": "./img/half-holy-tumbler.jpg",
+    "title": "half-holy-tumbler",
+    "description": "tumbler",
+    "price": 30
+  },
+  {
+    "id": 6,
+    "image": "./img/orange-gold-pearl-mug.jpg",
+    "title": "orange gold pearl",
+    "description": "cup",
+    "price": 30
+  },
+  {
+    "id": 7,
+    "image": "./img/christmas-shirt.jpg",
+    "title": "christmas shirt",
+    "description": "shirt",
+    "price": 30
+  },
+  {
+    "id": 8,
+    "image": "./img/acrylic-sign-other.jpg",
+    "title": "acrylic sign",
+    "description": "other-item",
+    "price": 30
+  },
+  {
+    "id": 9,
+    "image": "./img/sports-tumbler.jpg",
+    "title": "sports tumbler",
+    "description": "tumbler",
+    "price": 30
+  },
+  {
+    "id": 10,
+    "image": "./img/woman-mug.jpg",
+    "title": "phenomenal woman cup",
+    "description": "cup",
+    "price": 30
+  },
+  {
+    "id": 11,
+    "image": "./img/woke-up-shirt.jpg",
+    "title": "woke up shirt",
+    "description": "shirt",
+    "price": 30
+  },
+  {
+    "id": 12,
+    "image": "./img/hope-mat.jpg",
+    "title": "hope mat",
+    "description": "other-item",
+    "price": 30
+  }
+]

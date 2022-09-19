@@ -271,15 +271,14 @@ i {
   transition: all 0.5s;
   overflow: scroll;
 }
-#cups,
-#shirts,
-#other-items {
-  margin-left: 10px;
-}
 .border {
   border-left: #aba6a1 solid 1px;
   height: 20px;
-  margin-left: 10px;
+  margin: 0 10px;
+}
+.specific-option,
+.item :hover {
+  cursor: pointer;
 }
 .item--hidden {
   opacity: 0;
@@ -294,7 +293,7 @@ i {
   }
 }
 .fade-in-element {
-  animation: fade-in 2s;
+  animation: fade-in 5s;
 }
 img {
   width: 100%;
@@ -307,6 +306,7 @@ img {
 .item h3,
 .item p {
   margin: 0;
+  text-transform: capitalize;
 }
 .discription {
   margin: 25px 0;
