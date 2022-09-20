@@ -105,12 +105,12 @@ const specificOptions = document.querySelectorAll(".specific-option");
 const selectSpecOpt = (itemData) => {
   specificOptions.forEach((option) => {
     option.addEventListener("click", () => {
-      // console.log("this works");
+      // console.log(itemData);
       checkDis(option, itemData);
     });
   });
 };
-selectSpecOpt();
+// selectSpecOpt();
 
 const checkDis = (option, itemData) => {
   if (option.classList.contains("tumbler")) {
