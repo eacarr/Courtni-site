@@ -276,8 +276,7 @@ i {
   height: 20px;
   margin: 0 10px;
 }
-.specific-option,
-.item :hover {
+.specific-option :hover {
   cursor: pointer;
 }
 .item--hidden {
@@ -424,6 +423,7 @@ img {
 .hidden,
 [hidden] {
   opacity: 0;
+  display: none;
 }
 
 /*
