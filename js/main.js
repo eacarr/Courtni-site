@@ -48,7 +48,7 @@ signUp.classList.add("item--hidden");
 ////////////////////////////////////////////////////////////////////////////////
 //  Render page
 const searchItems = async () => {
-  const getItems = await fetch("/items.json");
+  const getItems = await fetch("js/items.json");
   const itemData = await getItems.json();
   renderAllOptions(itemData), selectSpecOpt(itemData);
 };
